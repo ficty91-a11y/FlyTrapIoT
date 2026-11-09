@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pantalla "Detalle de trampa" (ACTUALIZAR y ELIMINAR) -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".EditarTrampaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detalle de trampa"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <!-- Muestra el ID recibido por Intent -->
+        <TextView
+            android:id="@+id/tvIdTrampa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="ID de la trampa: 3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Código de sector" />
+
+        <EditText
+            android:id="@+id/etCodigoSector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ej: SEC-01"
+            android:inputType="textCapCharacters"
+            android:maxLength="20"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Tipo de trampa" />
+
+        <Spinner
+            android:id="@+id/spTipoTrampa"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nivel de captura (N° de moscas)" />
+
+        <EditText
+            android:id="@+id/etNivelCaptura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ej: 0"
+            android:inputType="number"
+            android:maxLength="4"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Observaciones (opcional)" />
+
+        <EditText
+            android:id="@+id/etObservaciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:hint="Ej: cebo cambiado"
+            android:inputType="textMultiLine|textCapSentences"
+            android:minLines="3" />
+
+        <!-- UPDATE -->
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:text="Actualizar" />
+
+        <!-- DELETE inmediato, sin confirmación -->
+        <Button
+            android:id="@+id/btnEliminar"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:text="Eliminar"
+            android:textColor="#D32F2F"
+            app:strokeColor="#D32F2F" />
+    </LinearLayout>
+</ScrollView>
